@@ -254,7 +254,7 @@
       "tag":"🌏 !cn",
       "type":"selector",
       "outbounds":[
-        "proxy",4
+        "proxy",
         "direct",
         "🇭🇰 香港节点",
         "🇹🇼 台湾节点",
