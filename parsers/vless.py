@@ -28,8 +28,8 @@ def parse(data):
             'insecure': False,
             'server_name': ''
         }
-        if netquery.get('allowInsecure') == '0':
-            node['tls']['insecure'] = False
+        if netquery.get('allowInsecure') == '1':
+            node['tls']['insecure'] = True
         node['tls']['server_name'] = netquery.get('sni', '') or netquery.get('peer', '')
         if netquery.get('fp'):
             node['tls']['utls'] = {
