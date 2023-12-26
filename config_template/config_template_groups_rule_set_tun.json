@@ -19,9 +19,8 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "https://dns.nextdns.io/f5c943/sing",
-        "detour": "proxy",
-        "address_resolver": "localDns"
+        "address": "https://8.8.8.8/dns-query",
+        "detour": "proxy"
       },
       {
         "tag": "localDns",
