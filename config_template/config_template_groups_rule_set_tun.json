@@ -20,7 +20,8 @@
       {
         "tag": "proxyDns",
         "address": "tls://sing-f5c943.dns.nextdns.io",
-        "detour": "proxy"
+        "detour": "proxy",
+        "address_resolver": "localDns"
       },
       {
         "tag": "localDns",
