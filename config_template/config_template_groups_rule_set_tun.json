@@ -19,13 +19,13 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "tls://sing-f5c943.dns.nextdns.io",
+        "address": "https://dns.nextdns.io/f5c943/sing",
         "detour": "proxy",
         "address_resolver": "localDns"
       },
       {
         "tag": "localDns",
-        "address": "tls://223.5.5.5",
+        "address": "https://223.5.5.5/dns-query",
         "detour": "direct"
       },
       {
