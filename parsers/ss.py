@@ -11,9 +11,11 @@ def parse(data):
         'server_port':0,
         'method':None,
         'password':None,
-        {
+        "multiplex": {
             "enabled": true,
-            "padding": true
+            "max_streams": 8,
+            "padding": true,
+            "protocol": "h2mux"
         }
     }
     flag = 0
