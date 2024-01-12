@@ -10,7 +10,11 @@ def parse(data):
         'server':None,
         'server_port':0,
         'method':None,
-        'password':None
+        'password':None,
+        {
+            "enabled": true,
+            "padding": true
+        }
     }
     flag = 0
     if param.find('#') > -1:
