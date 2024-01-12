@@ -10,13 +10,7 @@ def parse(data):
         'server':None,
         'server_port':0,
         'method':None,
-        'password':None,
-        "multiplex": {
-            "enabled": true,
-            "max_streams": 8,
-            "padding": true,
-            "protocol": "h2mux"
-        }
+        'password':None
     }
     flag = 0
     if param.find('#') > -1:
@@ -87,6 +81,13 @@ def parse(data):
             node['multiplex']['min_streams'] = int(smux_dict['min-streams'])
         if smux_dict.get('padding') == 'True':
             node['multiplex']['padding'] = True
+    else:
+        node['multiplex'] = {
+            "enabled": true,
+            "max_streams": 8,
+            "padding": true,
+            "protocol": "h2mux"
+        }
     param = param.split('/')[0]
     if param.find('@') > -1:
         matcher = re.match(r'(.*?)@(.*):(.*)', param)
