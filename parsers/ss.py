@@ -83,9 +83,9 @@ def parse(data):
             node['multiplex']['padding'] = True
     else:
         node['multiplex'] = {
-            "enabled": true,
+            "enabled": True,
             "max_streams": 8,
-            "padding": true,
+            "padding": True,
             "protocol": "h2mux"
         }
     param = param.split('/')[0]
