@@ -88,7 +88,7 @@ def parse(data):
             "padding": True,
             "protocol": "h2mux"
         }
-    param = param.split('/')[0]
+    param = param.split('/')[0].split('?')[0]
     if param.find('@') > -1:
         matcher = re.match(r'(.*?)@(.*):(.*)', param)
         if matcher:
