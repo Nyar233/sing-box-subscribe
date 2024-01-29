@@ -89,7 +89,11 @@ def parse(data):
             "padding": True,
             "protocol": "h2mux"
         }
-    param = param.split('/')[0].split('?')[0]
+    try: #fuck
+        param = param.split('?')[0]
+        matcher = tool.urlDecode(param) #保留'/'测试能不能解码
+    except:
+        param = param.split('/')[0].split('?')[0] #不能解码说明'/'不是base64内容
     if param.find('@') > -1:
         matcher = re.match(r'(.*?)@(.*):(.*)', param)
         if matcher:
