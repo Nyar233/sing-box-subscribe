@@ -10,7 +10,7 @@
       "secret": "",
       "external_ui_download_url": "https://cdn-gh.141888.xyz/https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
       "external_ui_download_detour": "",
-      "default_mode": "Enhanced"
+      "default_mode": "test"
     },
     "cache_file": {
       "enabled": true,
