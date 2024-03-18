@@ -21,12 +21,12 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "tls://8.8.8.8",
+        "address": "https://8.8.8.8/dns-query",
         "detour": "proxy"
       },
       {
         "tag": "localDns",
-        "address": "tls://1.12.12.12",
+        "address": "https://120.53.53.53/dns-query",
         "detour": "direct"
       },
       {
