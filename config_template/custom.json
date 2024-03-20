@@ -26,13 +26,7 @@
       },
       {
         "tag": "localDns",
-        "address": "https://doh.pub/dns-query",
-        "address_resolver": "dns-local",
-        "detour": "direct"
-      },
-      {
-        "tag": "dns-local",
-        "address": "local",
+        "address": "https://120.53.53.53/dns-query",
         "detour": "direct"
       },
       {
