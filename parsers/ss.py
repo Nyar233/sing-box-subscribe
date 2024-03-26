@@ -91,7 +91,7 @@ def parse(data):
         }
     try: #fuck
         param = param.split('?')[0]
-        matcher = tool.urlDecode(param) #保留'/'测试能不能解码
+        matcher = tool.b64Decode(param) #保留'/'测试能不能解码
     except:
         param = param.split('/')[0].split('?')[0] #不能解码说明'/'不是base64内容
     if param.find('@') > -1:
@@ -103,7 +103,7 @@ def parse(data):
         else:
             return None
         try:
-          matcher = re.match(r'(.*?):(.*)', tool.urlDecode(param).decode('utf-8'))
+          matcher = re.match(r'(.*?):(.*)', tool.b64Decode(param).decode('utf-8'))
           if matcher:
               node['method'] = matcher.group(1)
               node['password'] = matcher.group(2)
@@ -117,7 +117,7 @@ def parse(data):
           else:
               return None
     else:
-        matcher = re.match(r'(.*?):(.*)@(.*):(.*)', tool.urlDecode(param).decode('utf-8'))
+        matcher = re.match(r'(.*?):(.*)@(.*):(.*)', tool.b64Decode(param).decode('utf-8'))
         if matcher:
             node['method'] = matcher.group(1)
             node['password'] = matcher.group(2)
