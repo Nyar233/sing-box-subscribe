@@ -48,14 +48,14 @@
         "mode": "and",
         "rules": [
           {
-            "rule_set": "geosite-geolocation-!cn"
+            "rule_set": "geosite-geolocation-!cn",
+            "invert": true
           },
           {
             "rule_set": "geoip-cn"
           }
         ],
-        "server": "proxyDns",
-        "client_subnet": "119.29.29.29"
+        "server": "localDns"
       },
       {
         "outbound": "any",
