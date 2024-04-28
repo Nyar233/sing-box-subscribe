@@ -40,7 +40,7 @@
         "server": "block"
       },
       {
-        "rule_set": "geosite-geolocation-cn",
+        "rule_set": ["geosite-geolocation-cn", "geosite-cn"],
         "server": "localDns"
       },
       {
@@ -89,12 +89,14 @@
           "server": "127.0.0.1",
           "server_port": 2080
         }
-      }
+      },
+      "domain_strategy": "ipv4_only"
     },
     {
       "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 2080,
+      "domain_strategy": "ipv4_only",
       "sniff": true,
       "users": []
     }
@@ -169,7 +171,7 @@
         "outbound": "block"
       },
       {
-        "rule_set": ["geosite-geolocation-cn", "geoip-cn"],
+        "rule_set": ["geosite-geolocation-cn", "geoip-cn", "geosite-cn"],
         "outbound": "direct"
       },
       {
@@ -193,6 +195,12 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cdn-gh.141888.xyz/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn-gh.141888.xyz/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs"
       },
       {
         "tag": "geosite-geolocation-!cn",
