@@ -40,6 +40,10 @@
         "server": "block"
       },
       {
+        "rule_set": "bing",
+        "server": "proxyDns"
+      },
+      {
         "rule_set": ["geosite-geolocation-cn", "geosite-cn"],
         "server": "localDns"
       },
@@ -171,6 +175,10 @@
         "outbound": "block"
       },
       {
+        "rule_set": "bing",
+        "outbound": "proxy"
+      },
+      {
         "rule_set": ["geosite-geolocation-cn", "geoip-cn", "geosite-cn"],
         "outbound": "direct"
       },
@@ -213,6 +221,12 @@
         "type": "remote",
         "format": "binary",
         "url": "https://cdn-gh.141888.xyz/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "bing",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn-gh.141888.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/bing.srs"
       }
     ]
   }
