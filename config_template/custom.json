@@ -18,6 +18,7 @@
     }
   },
   "dns": {
+    "final": "proxyDns",
     "servers": [
       {
         "tag": "proxyDns",
