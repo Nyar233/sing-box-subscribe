@@ -50,6 +50,11 @@
         "server": "block"
       },
       {
+        "rule_set": ["bing"],
+        "server": "fakeip",
+        "rewrite_ttl": 1
+      },
+      {
         "rule_set": ["geosite-geolocation-cn", "geosite-cn"],
         "server": "localDns"
       },
