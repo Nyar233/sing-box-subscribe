@@ -47,7 +47,7 @@
     ],
     "rules": [
       {
-        "rule_set": "geosite-category-ads-all",
+        "rule_set": ["geosite-category-ads-all", "qiufengAD"],
         "server": "block"
       },
       {
@@ -99,13 +99,13 @@
           "server_port": 2080
         }
       },
-      "domain_strategy": "ipv4_only"
+      "domain_strategy": "prefer_ipv4"
     },
     {
       "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 2080,
-      "domain_strategy": "ipv4_only",
+      "domain_strategy": "prefer_ipv4",
       "sniff": true,
       "users": []
     }
@@ -176,7 +176,7 @@
         "outbound": "block"
       },
       {
-        "rule_set": ["geosite-category-ads-all","qiufengAD"],
+        "rule_set": ["geosite-category-ads-all", "qiufengAD"],
         "outbound": "block"
       },
       {
