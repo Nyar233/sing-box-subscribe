@@ -13,17 +13,10 @@
       "default_mode": "rule"
     },
     "cache_file": {
-      "enabled": true,
-      "store_fakeip": true
+      "enabled": true
     }
   },
   "dns": {
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
-    "independent_cache": true,
     "final": "proxyDns",
     "servers": [
       {
@@ -37,10 +30,6 @@
         "detour": "direct"
       },
       {
-        "tag": "fakeip",
-        "address": "fakeip"
-      },
-      {
         "tag": "block",
         "address": "rcode://success"
       }
@@ -52,8 +41,7 @@
       },
       {
         "rule_set": ["bing"],
-        "server": "fakeip",
-        "rewrite_ttl": 1
+        "server": "proxyDns"
       },
       {
         "rule_set": ["geosite-geolocation-cn", "geosite-cn"],
@@ -63,11 +51,6 @@
         "outbound": "any",
         "server": "localDns",
         "disable_cache": true
-      },
-      {
-        "query_type": ["A", "AAAA"],
-        "server": "fakeip",
-        "rewrite_ttl": 1
       },
       {
         "clash_mode": "direct",
