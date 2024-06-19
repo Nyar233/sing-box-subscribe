@@ -89,7 +89,6 @@
       "auto_route": true,
       "strict_route": true,
       "sniff": true,
-      "sniff_override_destination": false,
       "endpoint_independent_nat": false,
       "stack": "mixed",
       "platform": {
@@ -98,7 +97,8 @@
           "server": "127.0.0.1",
           "server_port": 2080
         }
-      }
+      },
+      "domain_strategy": "prefer_ipv4"
     },
     {
       "type": "mixed",
