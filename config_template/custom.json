@@ -18,6 +18,12 @@
   },
   "dns": {
     "final": "proxyDns",
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    },
+    "independent_cache": true,
     "servers": [
       {
         "tag": "proxyDns",
@@ -31,6 +37,10 @@
         "detour": "direct"
       },
       {
+        "tag": "fakeip",
+        "address": "fakeip"
+      },
+      {
         "tag": "block",
         "address": "rcode://success"
       }
@@ -42,7 +52,11 @@
       },
       {
         "rule_set": ["bing"],
-        "server": "proxyDns"
+        "server": "fakeip"
+      },
+      {
+        "rule_set": ["geosite-geolocation-!cn"],
+        "server": "fakeip"
       },
       {
         "rule_set": ["geosite-geolocation-cn", "geosite-cn"],
