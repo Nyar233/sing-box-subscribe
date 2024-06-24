@@ -51,11 +51,7 @@
         "server": "block"
       },
       {
-        "rule_set": ["bing"],
-        "server": "fakeip"
-      },
-      {
-        "rule_set": ["geosite-geolocation-!cn"],
+        "rule_set": ["bing","geosite-geolocation-!cn"],
         "server": "fakeip"
       },
       {
