@@ -176,7 +176,7 @@
         "outbound": "proxy"
       },
       {
-        "rule_set": ["geosite-geolocation-cn", "geoip-cn", "geosite-cn"],
+        "rule_set": ["geosite-cn", "geoip-cn"],
         "outbound": "direct"
       },
       {
@@ -201,13 +201,6 @@
         "type": "remote",
         "format": "source",
         "url": "https://cdn-gh.141888.xyz/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "geosite-geolocation-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://cdn-gh.141888.xyz/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs",
         "download_detour": "direct"
       },
       {
