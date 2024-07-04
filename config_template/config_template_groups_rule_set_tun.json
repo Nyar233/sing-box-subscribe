@@ -21,12 +21,12 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "https://8.8.8.8/dns-query",
-        "detour": "proxy"
+        "address": "tls://8.8.8.8",
+        "detour": "Proxy"
       },
       {
         "tag": "localDns",
-        "address": "https://120.53.53.53/dns-query",
+        "address": "https://223.5.5.5/dns-query",
         "detour": "direct"
       },
       {
@@ -61,6 +61,7 @@
         "server": "proxyDns"
       }
     ],
+    "final": "localDns",
     "strategy": "ipv4_only"
   },
   "inbounds": [
@@ -72,7 +73,7 @@
       "strict_route": true,
       "sniff": true,
       "endpoint_independent_nat": false,
-      "stack": "mixed",
+      "stack": "system",
       "platform": {
         "http_proxy": {
           "enabled": true,
@@ -100,137 +101,80 @@
       ]
     },
     {
-      "tag":"🤖 OpenAI",
+      "tag":"OpenAI",
       "type":"selector",
       "outbounds":[
-        "proxy",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ],
-      "default": "🇺🇸 美国节点"
+      "default": "America"
     },
     {
-      "tag":"🌌 Google",
+      "tag":"Google",
       "type":"selector",
       "outbounds":[
-        "proxy",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ]
     },
     {
-      "tag":"📟 Telegram",
+      "tag":"Telegram",
       "type":"selector",
       "outbounds":[
-        "proxy",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ]
     },
     {
-      "tag":"🐦 Twitter",
+      "tag":"Twitter",
       "type":"selector",
       "outbounds":[
-        "proxy",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ]
     },
     {
-      "tag":"👤 Facebook",
+      "tag":"Facebook",
       "type":"selector",
       "outbounds":[
-        "proxy",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ]
     },
     {
-      "tag":"🛍️ Amazon",
-      "type":"selector",
-      "outbounds":[
-        "proxy",
-        "direct",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
-      ]
-    },
-    {
-      "tag":"🍎 Apple",
-      "type":"selector",
-      "outbounds":[
-        "proxy",
-        "direct",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
-      ]
-    },
-    {
-      "tag":"🧩 Microsoft",
-      "type":"selector",
-      "outbounds":[
-        "proxy",
-        "direct",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
-      ]
-    },
-    {
-      "tag":"🎮 Game",
-      "type":"selector",
-      "outbounds":[
-        "proxy",
-        "direct",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
-      ]
-    },
-    {
-      "tag":"📺 Bilibili",
+      "tag":"BiliBili",
       "type":"selector",
       "outbounds":[
         "direct",
-        "proxy",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点"
+        "HongKong",
+        "TaiWan"
       ]
     },
     {
-      "tag":"🎬 MediaVideo",
+      "tag":"Bahamut",
       "type":"selector",
       "outbounds":[
-        "proxy",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
+        "TaiWan",
+        "Proxy"
       ]
     },
     {
@@ -286,17 +230,84 @@
       "tag":"Apple",
       "type":"selector",
       "outbounds":[
-        "proxy",
         "direct",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇯🇵 日本节点",
-        "🇺🇸 美国节点"
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
       ]
     },
     {
-      "tag":"🇭🇰 香港节点",
+      "tag":"Microsoft",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag":"Games",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag":"Streaming",
+      "type":"selector",
+      "outbounds":[
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others"
+      ]
+    },
+    {
+      "tag":"Global",
+      "type":"selector",
+      "outbounds":[ 
+        "HongKong",
+        "TaiWan",
+        "Singapore",
+        "Japan",
+        "America",
+        "Others",
+        "direct"
+      ]
+    },
+    {
+      "tag":"China",
+      "type":"selector",
+      "outbounds":[
+        "direct",
+        "Proxy"
+      ]
+    },
+    {
+      "tag":"AdBlock",
+      "type":"selector",
+      "outbounds":[
+        "block",
+        "direct"
+      ]
+    },
+    {
+      "tag":"HongKong",
       "type":"selector",
       "outbounds":[
         "{all}"
@@ -306,7 +317,7 @@
       ]
     },
     {
-      "tag":"🇹🇼 台湾节点",
+      "tag":"TaiWan",
       "type":"selector",
       "outbounds":[
         "{all}"
@@ -316,7 +327,7 @@
       ]
     },
     {
-      "tag":"🇸🇬 狮城节点",
+      "tag":"Singapore",
       "type":"selector",
       "outbounds":[
         "{all}"
@@ -326,7 +337,7 @@
       ]
     },
     {
-      "tag":"🇯🇵 日本节点",
+      "tag":"Japan",
       "type":"selector",
       "outbounds":[
         "{all}"
@@ -336,7 +347,7 @@
       ]
     },
     {
-      "tag":"🇺🇸 美国节点",
+      "tag":"America",
       "type":"selector",
       "outbounds":[
         "{all}"
@@ -346,19 +357,13 @@
       ]
     },
     {
-      "tag":"🌏 cn",
+      "tag":"Others",
       "type":"selector",
       "outbounds":[
-        "direct",
-        "proxy"
-      ]
-    },
-    {
-      "tag":"🛑 AdBlock",
-      "type":"selector",
-      "outbounds":[
-        "block",
-        "direct"
+        "{all}"
+      ],
+      "filter":[
+        {"action":"exclude","keywords":["🇭🇰|HK|hk|香港|香|🇹🇼|TW|tw|台湾|台|🇸🇬|SG|sg|新加坡|狮|🇯🇵|JP|jp|日本|日|🇺🇸|US|us|美国|美"]}
       ]
     },
     {
@@ -406,7 +411,7 @@
       },
       {
         "rule_set": "geosite-category-ads-all",
-        "outbound": "🛑 AdBlock"
+        "outbound": "AdBlock"
       },
       {
         "clash_mode": "direct",
@@ -431,71 +436,63 @@
       },
       {
         "rule_set": "geosite-openai",
-        "outbound": "🤖 OpenAI"
+        "outbound": "OpenAI"
       },
       {
-        "rule_set": "geosite-youtube",
-        "outbound": "🌌 Google"
+        "rule_set": ["geosite-youtube", "geoip-google", "geosite-google", "geosite-github"],
+        "outbound": "Google"
       },
       {
-        "rule_set": "geoip-google",
-        "outbound": "🌌 Google"
+        "rule_set": ["geoip-telegram", "geosite-telegram"],
+        "outbound": "Telegram"
       },
       {
-        "rule_set": ["geosite-google","geosite-github"],
-        "outbound": "🌌 Google"
+        "rule_set": ["geoip-twitter", "geosite-twitter"],
+        "outbound": "Twitter"
       },
       {
-        "rule_set": "geoip-telegram",
-        "outbound": "📟 Telegram"
+        "rule_set":["geoip-facebook", "geosite-facebook"],
+        "outbound": "Facebook"
       },
       {
         "rule_set": "geosite-bilibili",
         "outbound": "BiliBili"
       },
       {
-        "rule_set":"geoip-twitter",
-        "outbound": "🐦 Twitter"
+        "rule_set": "geosite-bahamut",
+        "outbound": "Bahamut"
       },
       {
-        "rule_set": "geosite-twitter",
-        "outbound": "🐦 Twitter"
+        "rule_set": "geosite-spotify",
+        "outbound": "Spotify"
       },
       {
-        "rule_set": "geoip-facebook",
-        "outbound": "👤 Facebook"
+        "rule_set": "geosite-tiktok",
+        "outbound": "TikTok"
       },
       {
         "rule_set": ["geoip-netflix", "geosite-netflix"],
         "outbound": "Netflix"
       },
       {
-        "rule_set": "geosite-amazon",
-        "outbound": "🛍️ Amazon"
+        "rule_set": "geosite-disney",
+        "outbound": "Disney+"
       },
       {
-        "rule_set": "geosite-apple",
-        "outbound": "🍎 Apple"
+        "rule_set": ["geoip-apple", "geosite-apple", "geosite-amazon"],
+        "outbound": "Apple"
       },
       {
         "rule_set": "geosite-microsoft",
-        "outbound": "🧩 Microsoft"
+        "outbound": "Microsoft"
       },
       {
         "rule_set": ["geosite-category-games", "geosite-dmm"],
         "outbound": "Games"
       },
       {
-        "rule_set": "geosite-bilibili",
-        "outbound": "📺 Bilibili"
-      },
-      {
-        "rule_set": "geoip-netflix",
-        "outbound": "🎬 MediaVideo"
-      },
-      {
-        "rule_set": ["geosite-tiktok","geosite-netflix","geosite-hbo","geosite-disney","geosite-primevideo"],
-        "outbound": "🎬 MediaVideo"
+        "rule_set": ["geosite-hbo", "geosite-primevideo"],
+        "outbound": "Streaming"
       },
       {
         "rule_set": "geosite-geolocation-!cn",
@@ -592,7 +589,7 @@
         "download_detour": "direct"
       },
       {
-        "tag": "geosite-instagram",
+        "tag": "geosite-bilibili",
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/bilibili.srs",
@@ -662,13 +659,6 @@
         "download_detour": "direct"
       },
       {
-        "tag": "geosite-apple",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/apple.srs",
-        "download_detour": "direct"
-      },
-      {
         "tag": "geosite-microsoft",
         "type": "remote",
         "format": "binary",
@@ -694,13 +684,6 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/hbo.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "geosite-disney",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/disney.srs",
         "download_detour": "direct"
       },
       {
