@@ -27,10 +27,10 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "tls://f5c943.dns.nextdns.io",
+        "address": "tls://dns.google",
         "detour": "proxy",
         "client_subnet": "114.114.114.114/24",
-        "address_resolver": "googleDns"
+        "address_resolver": "cloudflareDNs"
       },
       {
         "tag": "localDns",
@@ -38,8 +38,8 @@
         "detour": "direct"
       },
       {
-        "tag": "googleDns",
-        "address": "tls://8.8.8.8",
+        "tag": "cloudflareDNs",
+        "address": "tls://1.1.1.1",
         "detour": "proxy"
       },
       {
