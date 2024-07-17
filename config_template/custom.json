@@ -13,7 +13,9 @@
       "default_mode": "rule"
     },
     "cache_file": {
-      "enabled": true
+      "enabled": true,
+      "store_fakeip": true,
+      "store_rdrc": true
     }
   },
   "dns": {
@@ -29,7 +31,6 @@
         "tag": "proxyDns",
         "address": "https://dns.google/dns-query",
         "detour": "proxy",
-        "client_subnet": "114.114.114.114/24",
         "address_resolver": "CloudFlareDNS"
       },
       {
@@ -75,6 +76,21 @@
       {
         "clash_mode": "global",
         "server": "proxyDns"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": "geosite-geolocation-!cn",
+            "invert": true
+          },
+          {
+            "rule_set": "geoip-cn"
+          }
+        ],
+        "server": "proxyDns",
+        "client_subnet": "114.114.114.114/24" // Any China client IP address
       }
     ],
     "strategy": "prefer_ipv4"
@@ -157,6 +173,18 @@
         "outbound": "direct"
       },
       {
+        "rule_set": ["geosite-category-ads-all", "qiufengAD"],
+        "outbound": "block"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "proxy"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -174,24 +202,12 @@
         "outbound": "block"
       },
       {
-        "rule_set": ["geosite-category-ads-all", "qiufengAD"],
-        "outbound": "block"
-      },
-      {
         "rule_set": ["bing", "geosite-geolocation-!cn"],
         "outbound": "proxy"
       },
       {
         "rule_set": ["geosite-cn", "geoip-cn"],
         "outbound": "direct"
-      },
-      {
-        "clash_mode": "direct",
-        "outbound": "direct"
-      },
-      {
-        "clash_mode": "global",
-        "outbound": "proxy"
       }
     ],
     "rule_set": [
