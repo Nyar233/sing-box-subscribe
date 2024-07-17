@@ -58,14 +58,6 @@
         "server": "block"
       },
       {
-        "rule_set": ["bing", "geosite-geolocation-!cn"],
-        "server": "fakeip"
-      },
-      {
-        "rule_set": ["geosite-cn"],
-        "server": "localDns"
-      },
-      {
         "outbound": "any",
         "server": "localDns"
       },
@@ -76,6 +68,14 @@
       {
         "clash_mode": "global",
         "server": "proxyDns"
+      },
+      {
+        "rule_set": ["bing", "geosite-geolocation-!cn"],
+        "server": "fakeip"
+      },
+      {
+        "rule_set": ["geosite-cn"],
+        "server": "localDns"
       },
       {
         "type": "logical",
