@@ -90,7 +90,9 @@ def parse(data):
     else:
         node['multiplex'] = {
             "enabled": True,
-            "max_streams": 8,
+            "max_connections": 4,
+            "min_streams": 4,
+            "max_streams": 0,
             "padding": True,
             "protocol": "h2mux"
         }
