@@ -30,18 +30,12 @@
       {
         "tag": "proxyDns",
         "address": "tls://8.8.4.4",
-        "detour": "proxy",
-        "address_resolver": "CloudFlareDNS"
+        "detour": "proxy"
       },
       {
         "tag": "localDns",
         "address": "quic://223.6.6.6",
         "detour": "direct"
-      },
-      {
-        "tag": "CloudFlareDNS",
-        "address": "1.1.1.1",
-        "detour": "proxy"
       },
       {
         "tag": "fakeip",
