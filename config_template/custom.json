@@ -25,6 +25,7 @@
       "inet4_range": "198.18.0.0/15",
       "inet6_range": "fc00::/18"
     },
+    "strategy": "prefer_ipv4",
     "independent_cache": true,
     "servers": [
       {
@@ -80,14 +81,12 @@
   },
   "inbounds": [
     {
+      "tag": "tun",
       "type": "tun",
       "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"],
       "mtu": 9000,
       "auto_route": true,
       "strict_route": true,
-      "sniff": true,
-      "sniff_override_destination": false,
-      "domain_strategy": "prefer_ipv4",
       "endpoint_independent_nat": false,
       "stack": "mixed",
       "platform": {
@@ -102,8 +101,6 @@
       "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 2080,
-      "domain_strategy": "prefer_ipv4",
-      "sniff": true,
       "users": []
     }
   ],
@@ -124,14 +121,6 @@
     {
       "type": "direct",
       "tag": "direct"
-    },
-    {
-      "type": "dns",
-      "tag": "dns-out"
-    },
-    {
-      "type": "block",
-      "tag": "block"
     }
   ],
   "route": {
@@ -139,17 +128,17 @@
     "final": "proxy",
     "rules": [
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "protocol": "dns"
-          },
-          {
-            "port": 53
-          }
-        ],
-        "outbound": "dns-out"
+        "inbound": ["mixed", "tun"],
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "inbound": ["mixed", "tun"],
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
       },
       {
         "ip_is_private": true,
@@ -157,7 +146,7 @@
       },
       {
         "rule_set": ["geosite-category-ads-all", "qiufengAD"],
-        "outbound": "block"
+        "action": "reject"
       },
       {
         "clash_mode": "direct",
@@ -182,7 +171,7 @@
             "protocol": "stun"
           }
         ],
-        "outbound": "block"
+        "action": "reject"
       },
       {
         "rule_set": ["bing", "geosite-geolocation-!cn"],
