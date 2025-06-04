@@ -30,7 +30,7 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "tls://1.1.1.1",
+        "address": "tls://8.8.8.8",
         "detour": "proxy"
       },
       {
