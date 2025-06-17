@@ -49,10 +49,6 @@
     ],
     "rules": [
       {
-        "rule_set": ["geosite-category-ads-all", "qiufengAD"],
-        "server": "block"
-      },
-      {
         "outbound": "any",
         "server": "localDns"
       },
@@ -145,10 +141,6 @@
         "outbound": "direct"
       },
       {
-        "rule_set": ["geosite-category-ads-all", "qiufengAD"],
-        "action": "reject"
-      },
-      {
         "clash_mode": "direct",
         "outbound": "direct"
       },
@@ -183,20 +175,6 @@
       }
     ],
     "rule_set": [
-      {
-        "tag": "geosite-category-ads-all",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://cdn-gh.141888.xyz/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.srs",
-        "download_detour": "direct"
-      },
-      {
-        "tag": "qiufengAD",
-        "type": "remote",
-        "format": "source",
-        "url": "https://cdn-gh.141888.xyz/https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-Singbox.json",
-        "download_detour": "direct"
-      },
       {
         "tag": "geosite-cn",
         "type": "remote",
