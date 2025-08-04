@@ -20,11 +20,6 @@
   },
   "dns": {
     "final": "proxyDns",
-    "fakeip": {
-      "enabled": true,
-      "inet4_range": "198.18.0.0/15",
-      "inet6_range": "fc00::/18"
-    },
     "strategy": "prefer_ipv4",
     "independent_cache": true,
     "servers": [
@@ -40,8 +35,10 @@
         "detour": "direct"
       },
       {
+        "type": "fakeip",
         "tag": "fakeip",
-        "address": "fakeip"
+        "inet4_range": "198.18.0.0/15",
+        "inet6_range": "fc00::/18"
       },
       {
         "tag": "block",
