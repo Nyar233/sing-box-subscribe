@@ -43,7 +43,8 @@
       },
       {
         "tag": "block",
-        "address": "rcode://success"
+        "action": "predefined",
+        "rcode": "NOERROR"
       }
     ],
     "rules": [
