@@ -43,8 +43,12 @@
       },
       {
         "tag": "block",
-        "action": "predefined",
-        "rcode": "NOERROR"
+        "type": "predefined",
+        "responses": [
+          {
+            "rcode": "NOERROR"
+          }
+        ]
       }
     ],
     "rules": [
