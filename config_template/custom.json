@@ -30,7 +30,8 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "address": "tls://8.8.8.8",
+        "type": "tls",
+        "address": "8.8.8.8",
         "detour": "proxy"
       },
       {
@@ -48,10 +49,6 @@
       }
     ],
     "rules": [
-      {
-        "outbound": "any",
-        "server": "localDns"
-      },
       {
         "clash_mode": "direct",
         "server": "localDns"
@@ -120,6 +117,10 @@
     }
   ],
   "route": {
+    "default_domain_resolver": {
+      "server": "localDns",
+      "rewrite_ttl": 60
+    },
     "auto_detect_interface": true,
     "final": "proxy",
     "rules": [
