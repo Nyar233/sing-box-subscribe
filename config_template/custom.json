@@ -40,15 +40,6 @@
         "tag": "fakeip",
         "inet4_range": "198.18.0.0/15",
         "inet6_range": "fc00::/18"
-      },
-      {
-        "tag": "block",
-        "type": "predefined",
-        "responses": [
-          {
-            "rcode": "NOERROR"
-          }
-        ]
       }
     ],
     "rules": [
