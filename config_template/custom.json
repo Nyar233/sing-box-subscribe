@@ -124,10 +124,6 @@
     }
   ],
   "route": {
-    "default_domain_resolver": {
-      "server": "localDns",
-      "rewrite_ttl": 60
-    },
     "auto_detect_interface": true,
     "final": "proxy",
     "rules": [
