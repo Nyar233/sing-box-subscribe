@@ -32,8 +32,7 @@
       {
         "tag": "localDns",
         "type": "h3",
-        "server": "223.5.5.5",
-        "detour": "direct-out"
+        "server": "223.5.5.5"
       },
       {
         "type": "fakeip",
@@ -124,6 +123,10 @@
     }
   ],
   "route": {
+    "default_domain_resolver": {
+      "server": "localDns",
+      "rewrite_ttl": 60
+    },
     "auto_detect_interface": true,
     "final": "proxy",
     "rules": [
