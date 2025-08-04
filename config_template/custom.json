@@ -58,6 +58,7 @@
         "server": "proxyDns"
       },
       {
+        "query_type": ["A", "AAAA"],
         "rule_set": ["bing", "geosite-geolocation-!cn"],
         "server": "fakeip"
       },
