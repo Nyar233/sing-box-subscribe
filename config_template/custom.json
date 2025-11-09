@@ -25,13 +25,13 @@
     "servers": [
       {
         "tag": "proxyDns",
-        "type": "https",
+        "type": "udp",
         "server": "8.8.8.8",
         "detour": "proxy"
       },
       {
         "tag": "localDns",
-        "type": "https",
+        "type": "udp",
         "server": "223.5.5.5"
       },
       {
